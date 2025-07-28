@@ -40,3 +40,10 @@
         target: "#sideNav",
     });
 })(jQuery); // End of use strict
+
+document.getElementById('toggleMode').addEventListener('click', function () {
+  document.body.classList.toggle('dark-mode');
+});
+
+
+
