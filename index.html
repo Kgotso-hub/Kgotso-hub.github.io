@@ -16,10 +16,13 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 
 <body>
-  <header>
+  <div id="scrollProgress" class="scroll-progress"></div>
+
+  <header id="siteHeader">
     <nav class="navbar">
       <h1>Kgotsofalang Maganya</h1>
       <ul class="nav-links">
@@ -28,17 +31,18 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><button id="toggleMode">🌓</button></li>
+        <li><button id="toggleMode" aria-label="Toggle dark mode">🌙</button></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="about" class="section">
+    <section id="about" class="section reveal">
       <div class="content">
         <img src="assets/img/kgotso.jpg" alt="Kgotsofalang" class="profile-img" />
         <div>
           <h2>About Me</h2>
+          <p class="tagline"><span id="typedRole"></span><span class="cursor">|</span></p>
           <p>
             I'm a results-driven software developer with 6+ years of experience building and modernising
             full-stack systems for financial-technology and enterprise environments. I enjoy migrating legacy
@@ -50,7 +54,7 @@
       </div>
     </section>
 
-    <section id="experience" class="section">
+    <section id="experience" class="section reveal">
       <h2>Experience</h2>
       <ul class="timeline">
         <li>
@@ -76,41 +80,57 @@
       </ul>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section reveal">
       <h2>Skills</h2>
       <div class="skills-grid">
         <div>
           <h4>Languages</h4>
-          <p>C#, SQL, JavaScript, TypeScript, HTML, CSS, VB.NET</p>
+          <p class="pill-list">C#, SQL, JavaScript, TypeScript, HTML, CSS, VB.NET</p>
         </div>
         <div>
           <h4>Frameworks & Libraries</h4>
-          <p>ASP.NET, Bootstrap, React</p>
+          <p class="pill-list">ASP.NET, Bootstrap, React</p>
         </div>
         <div>
           <h4>Tools</h4>
-          <p>Visual Studio, VS Code, IIS, Git, JIRA, Postman, Selenium</p>
+          <p class="pill-list">Visual Studio, VS Code, IIS, Git, JIRA, Postman, Selenium</p>
         </div>
         <div>
           <h4>Concepts</h4>
-          <p>Agile, Unit Testing, APIs, Debugging, Web & Windows Apps</p>
+          <p class="pill-list">Agile, Unit Testing, APIs, Debugging, Web & Windows Apps</p>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="section reveal">
       <h2>Projects</h2>
-      <ul>
-        <li><strong>Tuck-shop Ordering System:</strong> Full-stack internal tool using C#, SQL, JS</li>
-        <li><strong>KUE/KYA Projects:</strong> Contributed to international and local platforms</li>
-        <li><strong>Windows to Web Migration:</strong> Modernized legacy systems for better UX</li>
-        <li><strong>Reporting & Audit Tooling:</strong> Built filtered search, Excel export, and activity-tracking views to improve reporting and traceability</li>
-      </ul>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Tuck-shop Ordering System</h3>
+          <p>Full-stack internal tool with online ordering, digital wallet, and payment functionality.</p>
+          <div class="tag-list"><span class="tag">C#</span><span class="tag">SQL</span><span class="tag">JavaScript</span></div>
+        </div>
+        <div class="project-card">
+          <h3>KUE/KYA Projects</h3>
+          <p>Contributed feature development and SQL optimisation to international and local client platforms.</p>
+          <div class="tag-list"><span class="tag">C#</span><span class="tag">SQL Server</span></div>
+        </div>
+        <div class="project-card">
+          <h3>Windows to Web Migration</h3>
+          <p>Modernised legacy Windows Forms systems into ASP.NET web applications for better UX and maintainability.</p>
+          <div class="tag-list"><span class="tag">ASP.NET</span><span class="tag">Windows Forms</span></div>
+        </div>
+        <div class="project-card">
+          <h3>Reporting & Audit Tooling</h3>
+          <p>Built filtered search, Excel export, and activity-tracking views to improve reporting and traceability.</p>
+          <div class="tag-list"><span class="tag">C#</span><span class="tag">T-SQL</span><span class="tag">Excel</span></div>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:Kg.obedience@gmail.com">Kg.obedience@gmail.com</a></p>
+      <p>Email: <a href="mailto:Kg.obedience@gmail.com">Kg.obedience@gmail.com</a> <button class="copy-btn" data-copy="Kg.obedience@gmail.com" aria-label="Copy email">Copy</button></p>
       <p>Phone: +27 67 197 5848</p>
       <p>Portfolio: <a href="https://kgotso-hub.github.io" target="_blank">kgotso-hub.github.io</a></p>
     </section>
@@ -119,6 +139,8 @@
   <footer>
     <p>&copy; 2026 Kgotsofalang Maganya</p>
   </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
   <script src="js/scripts.js"></script>
 </body>
