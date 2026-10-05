@@ -211,8 +211,50 @@ header.scrolled {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
+}
+
+.skill-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.skill-card h4 {
+  margin: 0 0 0.5rem;
+}
+
+.skill-card p {
+  margin: 0;
+}
+
+.tier-note {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.tier-current {
+  border-left: 4px solid var(--accent);
+}
+
+.tier-previous .skill-pill {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  color: var(--text);
+}
+
+.tier-training {
+  border-style: dashed;
+}
+
+.tier-training .skill-pill {
+  background: transparent;
+  border: 1px dashed var(--card-border);
+  color: var(--text);
 }
 
 .skill-pill {
