@@ -80,8 +80,10 @@ if (!('IntersectionObserver' in window)) {
 
 // ---------- Typed / rotating role tagline ----------
 const roles = [
-  'Full-Stack Software Developer',
-  'C# / ASP.NET Engineer'
+  'Intermediate Software Developer',
+  'C# / .NET Developer',
+  'SQL Server & T-SQL',
+  'Legacy System Modernisation'
 ];
 const typedEl = document.getElementById('typedRole');
 
